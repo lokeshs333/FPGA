@@ -238,6 +238,16 @@ end
 
 endmodule
 
+
+
+
+
+
+
+
+
+
+// adding a 7 segment display for the output
 module top_basys3 (
     input clk,              // 100 MHz clock
     input btnC,             // reset
