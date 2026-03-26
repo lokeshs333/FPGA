@@ -268,3 +268,45 @@ assign led_done = done;
 assign led_error = error_led;
 
 endmodule
+
+
+
+
+
+
+// xcd file
+## CLOCK
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+
+## SWITCHES
+set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
+set_property PACKAGE_PIN V16 [get_ports {sw[1]}]
+set_property PACKAGE_PIN W16 [get_ports {sw[2]}]
+set_property PACKAGE_PIN W17 [get_ports {sw[3]}]
+set_property PACKAGE_PIN W15 [get_ports {sw[4]}]
+set_property PACKAGE_PIN V15 [get_ports {sw[5]}]
+set_property PACKAGE_PIN W14 [get_ports {sw[6]}]
+set_property PACKAGE_PIN W13 [get_ports {sw[7]}]
+
+## BUTTONS
+set_property PACKAGE_PIN U18 [get_ports btnC]   # reset
+set_property PACKAGE_PIN T18 [get_ports btnU]   # start
+
+## LED OUTPUT (GCD)
+set_property PACKAGE_PIN U16 [get_ports {led[0]}]
+set_property PACKAGE_PIN E19 [get_ports {led[1]}]
+set_property PACKAGE_PIN U19 [get_ports {led[2]}]
+set_property PACKAGE_PIN V19 [get_ports {led[3]}]
+set_property PACKAGE_PIN W18 [get_ports {led[4]}]
+set_property PACKAGE_PIN U15 [get_ports {led[5]}]
+set_property PACKAGE_PIN U14 [get_ports {led[6]}]
+set_property PACKAGE_PIN V14 [get_ports {led[7]}]
+
+## STATUS LEDs
+set_property PACKAGE_PIN V13 [get_ports led_done]
+set_property PACKAGE_PIN V3  [get_ports led_error]
+
+
+
+
