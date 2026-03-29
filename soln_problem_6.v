@@ -310,3 +310,95 @@ endmodule
 
 
 
+
+
+
+
+
+// this is my xcd filr
+## ==============================
+## 🔥 CLOCK (100 MHz)
+## ==============================
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+create_clock -add -name sys_clk -period 10.00 [get_ports clk]
+
+
+## ==============================
+## 🔁 RESET (use a switch)
+## ==============================
+set_property PACKAGE_PIN R2 [get_ports reset]
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
+
+
+## ==============================
+## 🎮 INPUT BUTTONS (S1, S2, S3)
+## ==============================
+# Using push buttons (recommended)
+set_property PACKAGE_PIN U18 [get_ports S1]   ## BTN0
+set_property PACKAGE_PIN T18 [get_ports S2]   ## BTN1
+set_property PACKAGE_PIN W19 [get_ports S3]   ## BTN2
+
+set_property IOSTANDARD LVCMOS33 [get_ports {S1 S2 S3}]
+
+
+## ==============================
+## 🔢 INPUT a[3:0] (switches)
+## ==============================
+set_property PACKAGE_PIN V17 [get_ports {a[0]}]
+set_property PACKAGE_PIN V16 [get_ports {a[1]}]
+set_property PACKAGE_PIN W16 [get_ports {a[2]}]
+set_property PACKAGE_PIN W17 [get_ports {a[3]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports a[*]]
+
+
+## ==============================
+## 🔢 INPUT b[3:0] (switches)
+## ==============================
+set_property PACKAGE_PIN W15 [get_ports {b[0]}]
+set_property PACKAGE_PIN V15 [get_ports {b[1]}]
+set_property PACKAGE_PIN W14 [get_ports {b[2]}]
+set_property PACKAGE_PIN W13 [get_ports {b[3]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports b[*]]
+
+
+## ==============================
+## ⚙️ MODE m[1:0] (switches)
+## ==============================
+set_property PACKAGE_PIN V2 [get_ports {m[0]}]
+set_property PACKAGE_PIN T3 [get_ports {m[1]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports m[*]]
+
+
+## ==============================
+## 💡 OUTPUT y[7:0] (LEDs)
+## ==============================
+set_property PACKAGE_PIN U16 [get_ports {y[0]}]
+set_property PACKAGE_PIN E19 [get_ports {y[1]}]
+set_property PACKAGE_PIN U19 [get_ports {y[2]}]
+set_property PACKAGE_PIN V19 [get_ports {y[3]}]
+set_property PACKAGE_PIN W18 [get_ports {y[4]}]
+set_property PACKAGE_PIN U15 [get_ports {y[5]}]
+set_property PACKAGE_PIN U14 [get_ports {y[6]}]
+set_property PACKAGE_PIN V14 [get_ports {y[7]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports y[*]]
+
+
+## ==============================
+## 💡 STATUS LEDS
+## ==============================
+set_property PACKAGE_PIN V13 [get_ports active_led]
+set_property PACKAGE_PIN V3  [get_ports error_led]
+set_property PACKAGE_PIN W3  [get_ports invalid_led]
+
+set_property IOSTANDARD LVCMOS33 [get_ports {active_led error_led invalid_led}]
+
+
+
+
+
+
