@@ -175,3 +175,55 @@ module led_bist_system (
     end
 
 endmodule
+
+
+
+
+
+
+// xdc file for this id
+
+## =======================================================
+## BASYS 3 XDC FILE FOR LED BIST SYSTEM
+## =======================================================
+
+## Clock signal (100 MHz)
+set_property PACKAGE_PIN W5 [get_ports clk]							
+	set_property IOSTANDARD LVCMOS33 [get_ports clk]
+	create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
+ 
+## Switches (sw[3:0])
+set_property PACKAGE_PIN V17 [get_ports {sw[0]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
+set_property PACKAGE_PIN V16 [get_ports {sw[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {sw[1]}]
+set_property PACKAGE_PIN W16 [get_ports {sw[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {sw[2]}]
+set_property PACKAGE_PIN W17 [get_ports {sw[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {sw[3]}]
+
+## LEDs (led[3:0])
+set_property PACKAGE_PIN U16 [get_ports {led[0]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {led[0]}]
+set_property PACKAGE_PIN E19 [get_ports {led[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {led[1]}]
+set_property PACKAGE_PIN U19 [get_ports {led[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {led[2]}]
+set_property PACKAGE_PIN V19 [get_ports {led[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {led[3]}]
+
+## Buttons
+# Center Button -> Reset (btnC)
+set_property PACKAGE_PIN U18 [get_ports btnC]						
+	set_property IOSTANDARD LVCMOS33 [get_ports btnC]
+# Left Button -> Manual Mode (btnL)
+set_property PACKAGE_PIN W19 [get_ports btnL]						
+	set_property IOSTANDARD LVCMOS33 [get_ports btnL]
+# Right Button -> Counter Mode (btnR)
+set_property PACKAGE_PIN T17 [get_ports btnR]						
+	set_property IOSTANDARD LVCMOS33 [get_ports btnR]
+
+## Configuration optimization (Optional but recommended)
+set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
+set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
+set_property CONFIG_MODE SPIx4 [current_design]
